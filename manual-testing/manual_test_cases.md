@@ -1,6 +1,4 @@
-Here is the updated `manual-testing/manual_test_cases.md` based on your latest test execution. TC05 is recorded as Pass because the unavailable URL returned HTTP 404.
 
-Writing
 
 # Manual Testing - Test Cases
 
