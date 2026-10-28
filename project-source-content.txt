@@ -71,6 +71,167 @@ All test results and learning outcomes should reflect actual
 execution and completed activities.
 
 
+========== test_scenarios.md ==========
+That's a good approach for your QE Circle Learning Project. Instead of repeating the same scenarios in separate documents, we'll create one file that connects manual testing steps with their corresponding Playwright automation steps.
+
+We'll keep your existing files and use the new file as a common reference for both types of testing.
+
+## Step 1 â€” Create `test_scenarios.md`
+
+Create this file in your project root:
+
+text
+
+```
+QE-Circle-Learning-Project/
+â”œâ”€â”€ README.md
+â”œâ”€â”€ tests/
+â”‚   â””â”€â”€ test_qe_basics.py
+â”œâ”€â”€ manual-testing/
+â”‚   â””â”€â”€ manual_test_cases.md
+â””â”€â”€ test_scenarios.md
+```
+
+## Step 2 â€” Add this initial content
+
+Start with the five scenarios you have already implemented. Here's a reusable format for each scenario.
+
+Writing
+
+# QE Circle Learning Project â€” Test Scenarios
+
+## 1\. Purpose
+
+This document defines the common test scenarios used for manual testing and Playwright automation in the QE Circle Learning Project.
+
+Each scenario includes manual execution steps, expected results, and the corresponding automation implementation.
+
+## 2\. Application Under Test
+
+- **Application:** Playwright Documentation Website
+- **Base URL:** [https://playwright.dev/](<https://playwright.dev/>)
+- **Automation Tool:** Playwright with Python
+- **Test Framework:** pytest
+
+## 3\. Test Scenarios
+
+### TS01 â€” Open Homepage
+
+**Objective:** Verify that the Playwright homepage loads successfully.
+
+**Manual Testing Steps:**
+
+1. Open a web browser.
+2. Navigate to [https://playwright.dev/](<https://playwright.dev/>).
+3. Wait for the page to load.
+4. Verify that the homepage body is visible.
+
+**Expected Result:** The homepage loads successfully and its body is visible.
+
+**Automation Reference:** `tests/test_qe_basics.py` â€” `test_homepage_loads`
+
+**Automation Check:** Navigate to the homepage and assert that the body is visible.
+
+---
+
+### TS02 â€” Verify Homepage Title
+
+**Objective:** Verify that the homepage title contains the expected product name.
+
+**Manual Testing Steps:**
+
+1. Open a web browser.
+2. Navigate to [https://playwright.dev/](<https://playwright.dev/>).
+3. Observe the browser tab title.
+4. Verify that the title contains "Playwright".
+
+**Expected Result:** The page title contains "Playwright".
+
+**Automation Reference:** `tests/test_qe_basics.py` â€” `test_homepage_title`
+
+**Automation Check:** Assert that the page title matches a regular expression containing "Playwright".
+
+---
+
+### TS03 â€” Get Started Navigation
+
+**Objective:** Verify that the Get started link opens the installation documentation.
+
+**Manual Testing Steps:**
+
+1. Open a web browser.
+2. Navigate to [https://playwright.dev/](<https://playwright.dev/>).
+3. Click the Get started link.
+4. Verify that the destination URL is [https://playwright.dev/docs/intro](<https://playwright.dev/docs/intro>).
+5. Verify that the Installation heading is visible.
+
+**Expected Result:** The installation documentation opens at the expected URL, and the Installation heading is visible.
+
+**Automation Reference:** `tests/test_qe_basics.py` â€” `test_get_started_navigation`
+
+**Automation Check:** Click the link and assert the destination URL and heading visibility.
+
+---
+
+### TS04 â€” Verify Get Started Link
+
+**Objective:** Verify that the Get started link is visible and identifiable by its accessible name.
+
+**Manual Testing Steps:**
+
+1. Open a web browser.
+2. Navigate to [https://playwright.dev/](<https://playwright.dev/>).
+3. Locate the Get started link.
+4. Verify that the link is visible and its text identifies its purpose.
+
+**Expected Result:** The Get started link is visible and identifiable by its accessible name.
+
+**Automation Reference:** `tests/test_qe_basics.py` â€” `test_get_started_link_is_visible`
+
+**Automation Check:** Locate the link by role and accessible name, then assert that it is visible.
+
+---
+
+### TS05 â€” Navigate to an Unavailable Page
+
+**Objective:** Verify that the application returns HTTP 404 for a nonexistent page.
+
+**Manual Testing Steps:**
+
+1. Open a web browser.
+2. Navigate to https://playwright.dev/nonexistent-learning-test-page.
+3. Observe the response or not-found page.
+4. Verify the HTTP response status using suitable browser developer tools or other approved evidence.
+
+**Expected Result:** The request returns HTTP 404 Not Found.
+
+**Automation Reference:** `tests/test_qe_basics.py` â€” `test_unavailable_page_behavior`
+
+**Automation Check:** Capture the navigation response and assert that its status code is 404.
+
+**Important:** A browser message such as "This site can't be reached" does not by itself prove an HTTP 404 response. Verify the status code before recording this expected result as satisfied.
+
+---
+
+## 4\. Execution and Evidence
+
+For each scenario, record:
+
+- Execution date
+- Execution type: Manual or Automated
+- Actual result
+- Status: Pass, Fail, or Pending Investigation
+- Evidence, when applicable
+
+Manual and automated results must be recorded separately when they come from separate executions.
+
+## 5\. Scope
+
+This document covers foundational UI testing concepts using the Playwright documentation website. It is a learning document, not a production test specification.
+
+
+
+
 ========== .aava\AAVA.md ==========
 # Aava Project Constitution: Core Rules
 
@@ -336,32 +497,59 @@ See [the docs](https://docs.pytest.org/en/stable/how-to/cache.html) for more inf
 
 ========== manual-testing\manual_test_cases.md ==========
 
+
 # Manual Testing - Test Cases
 
 ## Application
-Playwright documentation website used for learning.
+
+**Application:** Playwright Documentation Website\
+**URL:** [https://playwright.dev/](<https://playwright.dev/>)
 
 ## Test Cases
 
 | ID | Scenario | Expected Result | Actual Result | Status |
-|---|---|---|---|---|
-| TC01 | Open homepage | Homepage loads | Record observation | Pending |
-| TC02 | Verify page title | Title contains Playwright | Record observation | Pending |
-| TC03 | Click Get started | Installation page opens | Record observation | Pending |
-| TC04 | Verify Get started link | Link is visible | Record observation | Pending |
-| TC05 | Navigate to an unavailable page | Appropriate not-found behavior | Record observation | Pending |
+| --- | --- | --- | --- | --- |
+| TC01 | Open homepage | Homepage loads successfully. | The Playwright website opened successfully, and the homepage body was visible. | Pass |
+| TC02 | Verify page title | Page title contains "Playwright". | The page title contained "Playwright". | Pass |
+| TC03 | Click Get started | Installation page opens. | Navigated to `https://playwright.dev/docs/intro`, and the Installation heading was visible. | Pass |
+| TC04 | Verify Get started link | Link is visible and identifiable by its text. | The Get started link was visible and identifiable by its accessible name. | Pass |
+| TC05 | Navigate to an unavailable page | Application returns an appropriate not-found response. | Navigated to `https://playwright.dev/nonexistent-learning-test-page`. The server returned HTTP status code `404 Not Found`. | Pass |
 
 ## Execution Notes
 
-Execute each test in the browser and record the actual
-behavior before updating its status.
+- Execute each test in the browser and record the actual behavior.
+- Compare the observed result with the expected result before assigning a status.
+- Mark a test as **Pass** only when the observed result meets the expected result.
+- Mark a test as **Fail** when the observed result does not meet the expected result.
+- Use **Pending Investigation** when more evidence is needed to determine the outcome.
+- Record the exact error message, HTTP status code, or destination URL whenever relevant.
+- Capture screenshots when useful as evidence of the observed behavior.
 
 ## Learning Outcomes
 
-- Writing clear test scenarios
-- Defining expected results
-- Recording actual results
-- Distinguishing pass and fail outcomes
+- Writing clear test scenarios.
+- Defining expected results.
+- Recording actual results accurately.
+- Distinguishing pass, fail, and pending investigation.
+- Verifying page titles, links, navigation, and error-page behavior.
+- Evaluating test results using observed evidence instead of assumptions.
+- Understanding HTTP status codes and validating not-found responses.
+
+## Execution Summary
+
+- **Total test cases:** 5
+- **Passed:** 5
+- **Failed:** 0
+- **Pending investigation:** 0
+
+## Scope and Limitations
+
+This document is part of the QE Circle Learning Project.
+
+The test cases are intended for learning manual testing fundamentals using the Playwright documentation website. All actual results and statuses should reflect observed behavior and verified evidence.
+
+Execution Note: The latest run of tests/test_qe_basics.py completed successfully, with all five tests passing. TC05 verifies that the unavailable URL returns HTTP 404. The test results reflect this automated execution; manual execution evidence should be recorded separately when applicable.
+
 
 
 ========== python-exercises\test_result_summary.py ==========
@@ -395,34 +583,24 @@ import re
 
 from playwright.sync_api import Page, expect
 
-
 BASE_URL = "https://playwright.dev/"
 
 
+# TC01: Open homepage
 def test_homepage_loads(page: Page):
     page.goto(BASE_URL)
 
-    expect(page).to_have_title(re.compile("Playwright"))
     expect(page.locator("body")).to_be_visible()
 
 
-def test_homepage_heading_is_visible(page: Page):
+# TC02: Verify page title
+def test_homepage_title(page: Page):
     page.goto(BASE_URL)
 
-    expect(
-        page.get_by_role("heading", name=re.compile("Playwright"))
-        .first
-    ).to_be_visible()
+    expect(page).to_have_title(re.compile("Playwright"))
 
 
-def test_get_started_link_is_visible(page: Page):
-    page.goto(BASE_URL)
-
-    expect(
-        page.get_by_role("link", name="Get started")
-    ).to_be_visible()
-
-
+# TC03: Click Get started
 def test_get_started_navigation(page: Page):
     page.goto(BASE_URL)
 
@@ -436,22 +614,26 @@ def test_get_started_navigation(page: Page):
     ).to_be_visible()
 
 
-def test_python_documentation_navigation(page: Page):
+# TC04: Verify Get started link
+def test_get_started_link_is_visible(page: Page):
     page.goto(BASE_URL)
 
-    page.get_by_role("button", name="Node.js").hover()
+    expect(
+        page.get_by_role("link", name="Get started")
+    ).to_be_visible()
 
-    python_link = page.get_by_role(
-        "navigation", name="Main"
-    ).get_by_role("link", name="Python")
 
-    expect(python_link).to_be_visible()
-    python_link.click()
 
-    expect(page).to_have_url(
-        "https://playwright.dev/python/"
+# TC05: Navigate to an unavailable page
+def test_unavailable_page_behavior(page: Page):
+    response = page.goto(
+        "https://playwright.dev/nonexistent-learning-test-page"
     )
 
+    assert response is not None, "No HTTP response was received"
+    assert response.status == 404, (
+        f"Expected HTTP 404, received HTTP {response.status}"
+    )
 
 ========== tests\test_saucedemo_checkout.py ==========
 

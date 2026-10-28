@@ -50,5 +50,5 @@ This document is part of the QE Circle Learning Project.
 
 The test cases are intended for learning manual testing fundamentals using the Playwright documentation website. All actual results and statuses should reflect observed behavior and verified evidence.
 
-**Note:** The recorded results are based on the latest automated test execution. TC05 returned HTTP 404, but the complete test run reported one failure because the assertion used `expect()` with an integer. After correcting the assertion to use Python's `assert`, rerun the tests and confirm all five pass before treating the final execution summary as verified.
+Execution Note: The latest run of tests/test_qe_basics.py completed successfully, with all five tests passing. TC05 verifies that the unavailable URL returns HTTP 404. The test results reflect this automated execution; manual execution evidence should be recorded separately when applicable.
 
