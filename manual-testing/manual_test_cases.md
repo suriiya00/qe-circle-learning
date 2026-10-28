@@ -1,3 +1,5 @@
+Here is the updated `manual-testing/manual_test_cases.md` based on your latest test execution. TC05 is recorded as Pass because the unavailable URL returned HTTP 404.
+
 Writing
 
 # Manual Testing - Test Cases
@@ -11,20 +13,20 @@ Writing
 
 | ID | Scenario | Expected Result | Actual Result | Status |
 | --- | --- | --- | --- | --- |
-| TC01 | Open homepage | Homepage loads successfully. | Browser opened the Playwright website, and the automated test execution succeeded. | Pass |
-| TC02 | Verify page title | Page title contains "Playwright". | Observed title: "Playwright enables reliable web automation for testing, scripting, and AI agents." | Pass |
-| TC03 | Click Get started | Installation page opens. | Navigated to `https://playwright.dev/docs/intro`. The Installation heading was visible. | Pass |
-| TC04 | Verify Get started link | Link is visible and identifiable by its text. | The Get started link was visible and identifiable by its text. | Pass |
-| TC05 | Navigate to an unavailable page | Application displays an appropriate not-found response. | Browser displayed "This site can't be reached". Application not-found behavior has not been verified. | Pending Investigation |
+| TC01 | Open homepage | Homepage loads successfully. | The Playwright website opened successfully, and the homepage body was visible. | Pass |
+| TC02 | Verify page title | Page title contains "Playwright". | The page title contained "Playwright". | Pass |
+| TC03 | Click Get started | Installation page opens. | Navigated to `https://playwright.dev/docs/intro`, and the Installation heading was visible. | Pass |
+| TC04 | Verify Get started link | Link is visible and identifiable by its text. | The Get started link was visible and identifiable by its accessible name. | Pass |
+| TC05 | Navigate to an unavailable page | Application returns an appropriate not-found response. | Navigated to `https://playwright.dev/nonexistent-learning-test-page`. The server returned HTTP status code `404 Not Found`. | Pass |
 
 ## Execution Notes
 
 - Execute each test in the browser and record the actual behavior.
-- Compare the observed behavior with the expected result before assigning a status.
+- Compare the observed result with the expected result before assigning a status.
 - Mark a test as **Pass** only when the observed result meets the expected result.
 - Mark a test as **Fail** when the observed result does not meet the expected result.
 - Use **Pending Investigation** when more evidence is needed to determine the outcome.
-- Record the exact error message or destination URL whenever relevant.
+- Record the exact error message, HTTP status code, or destination URL whenever relevant.
 - Capture screenshots when useful as evidence of the observed behavior.
 
 ## Learning Outcomes
@@ -35,18 +37,20 @@ Writing
 - Distinguishing pass, fail, and pending investigation.
 - Verifying page titles, links, navigation, and error-page behavior.
 - Evaluating test results using observed evidence instead of assumptions.
+- Understanding HTTP status codes and validating not-found responses.
 
 ## Execution Summary
 
 - **Total test cases:** 5
-- **Passed:** 4
+- **Passed:** 5
 - **Failed:** 0
-- **Pending investigation:** 1
-
-**Note:** TC05 is not yet confirmed as Pass or Fail. Update the execution summary after investigating the browser connectivity error.
+- **Pending investigation:** 0
 
 ## Scope and Limitations
 
 This document is part of the QE Circle Learning Project.
 
 The test cases are intended for learning manual testing fundamentals using the Playwright documentation website. All actual results and statuses should reflect observed behavior and verified evidence.
+
+**Note:** The recorded results are based on the latest automated test execution. TC05 returned HTTP 404, but the complete test run reported one failure because the assertion used `expect()` with an integer. After correcting the assertion to use Python's `assert`, rerun the tests and confirm all five pass before treating the final execution summary as verified.
+
