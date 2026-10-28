@@ -1,0 +1,707 @@
+﻿
+========== README.md ==========
+
+# QE Circle Learning Project
+
+## Overview
+
+This repository contains hands-on learning exercises intended
+to strengthen foundational skills in Quality Engineering (QE).
+
+## Learning Areas
+
+- Manual Testing
+- Automation Testing
+- Playwright with Python
+- Python fundamentals for test automation
+- AAVA introductory learning and workflow exploration
+
+## Repository Structure
+
+- `tests/` - Playwright UI automation exercises
+- `manual-testing/` - Manual test cases and defect-report examples
+- `python-exercises/` - Python practice scripts
+- `aava-learning/` - Approved learning notes and sanitized examples
+- `evidence/` - Non-confidential test execution evidence
+
+## Environment
+
+- Python
+- pytest
+- Playwright for Python
+- Chromium browser, where permitted
+
+## Setup
+
+Create and activate a Python virtual environment.
+
+Install the required packages in an approved environment:
+
+    python -m pip install pytest-playwright
+
+Install the browser if permitted:
+
+    python -m playwright install chromium
+
+## Running Tests
+
+Run the tests with:
+
+    python -m pytest -v
+
+## Learning Outcomes
+
+This project aims to practice:
+
+- Designing manual test cases
+- Identifying UI elements with Playwright locators
+- Performing browser actions and writing assertions
+- Running and reviewing automated tests
+- Using Python functions and data structures
+- Exploring basic AAVA workflows
+
+## Progress
+
+Update this section as exercises are completed and verified.
+
+## Scope and Limitations
+
+This is a learning project, not a production-ready test framework.
+All test results and learning outcomes should reflect actual
+execution and completed activities.
+
+
+========== .aava\AAVA.md ==========
+# Aava Project Constitution: Core Rules
+
+This file is the **authoritative truth** for Aava's behavior and architectural standards in this project. All agents must follow these rules strictly.
+
+## 1. Architectural Integrity
+
+- **Memory-First**: Always check `.aava/AAVA.md`, `.aava/AGENTS.md`, and tiered indices before exploration.
+- **Atomic Topics**: Specialized knowledge belongs in `.aava/memory/topics/`.
+- **Elite Standards**: Maintain high-quality documentation and clean code.
+
+## 2. Development Workflow
+
+- **Atomic Commits**: Group related changes into small, descriptive commits.
+- **Lint Guard**: Resolve all MDXXX and pylint errors before declaring a task complete.
+
+
+========== .aava\AGENTS.md ==========
+# Aava Patterns Registry (.aava/AGENTS.md)
+
+This file contains **learned patterns**, common implementation "gotchas", and architectural insights discovered during agentic exploration.
+
+## 1. Discovered Patterns
+
+- **Memory-First Protocol**: All agents should scan `.aava/memory.md` before performing redundant `searchCodebase` calls.
+
+## 2. Implementation Gotchas
+
+- **Path Resolution**: When running in `uv` (inside `src`), paths should be resolved relative to the actual workspace root.
+- **NoneType Join**: Ensure `workspace_root` is not `None` before using `os.path.join` for memory operations.
+
+## 3. Tool Usage Best-Practices
+
+- **SynthesizeAgent**: Should be used for complex multi-file edits.
+- **ExploreAgent**: Should be used for initial reconnaissance and pattern discovery.
+
+
+========== .aava\memory.md ==========
+# Aava Memory Index
+
+This file contains pointers to detailed topic-specific memory files in the project.
+
+## 1. Project Memory (.aava/memory/)
+- No detailed project memory topics recorded yet.
+
+## 2. Local Memory (.aava/memory-local/)
+- No local topics recorded yet.
+
+## 3. User Global Memory (~/.aava/agent-memory/)
+- No global user topics recorded yet.
+
+
+========== .aava\commands-skills\DISCOVERED_SKILLS.md ==========
+# Discovered Skills Registry
+
+*Generated at: 10/28/2026, 3:34:50 PM*
+
+This document is a categorical index of all skills discovered across the workspace and system.
+
+## Advanced Development
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$brainstorming_advance` | You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation. | `plugin` | - |
+| `$systematic-debugging_advance` | Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes | `plugin` | - |
+| `$test-driven-development_advance` | Use when implementing any feature or bugfix, before writing implementation code | `plugin` | - |
+| `$using-git-worktrees_advance` | Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification | `plugin` | - |
+| `$using-superpowers_advance` | Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions | `plugin` | - |
+| `$verification-before-completion_advance` | Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always | `plugin` | - |
+| `$writing-skills_advance` | Use when creating new skills, editing existing skills, or verifying skills work before deployment | `plugin` | - |
+
+## Advanced Workflows
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$dispatching-parallel-agents_advance` | Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies | `plugin` | - |
+| `$executing-plans_advance` | Use when you have a written implementation plan to execute in a separate session with review checkpoints | `plugin` | - |
+| `$finishing-a-development-branch_advance` | Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup | `plugin` | - |
+| `$receiving-code-review_advance` | Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation | `plugin` | - |
+| `$requesting-code-review_advance` | Use when completing tasks, implementing major features, or before merging to verify work meets requirements | `plugin` | - |
+| `$subagent-driven-development_advance` | Use when executing implementation plans with independent tasks in the current session | `plugin` | - |
+| `$writing-plans_advance` | Use when you have a spec or requirements for a multi-step task, before touching code | `plugin` | - |
+
+## Build & Implementation
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$api-design` | Guides stable API and interface design that is hard to misuse with clear contracts and consistent error semantics | `plugin` | - |
+| `$auth-patterns` | Guides authentication and authorization implementation with secure patterns for OAuth, JWT, sessions, RBAC, and common auth flows | `plugin` | - |
+| `$containerization` | Docker image optimization, Kubernetes deployment patterns, and container orchestration best practices | `plugin` | `$ci-cd-automation` |
+| `$context-eng` | Optimizes agent context setup by feeding the right information at the right time for maximum output quality | `plugin` | - |
+| `$data-pipeline` | ETL/ELT pipeline design, data quality validation, batch vs stream processing trade-offs | `plugin` | `$db-design` |
+| `$db-design` | Guides database schema design, migration planning, query optimization, and indexing strategy for relational and document databases | `plugin` | `$api-design` |
+| `$design-system` | Extracts and documents design tokens, component patterns, and style guidelines from existing codebases to establish a consistent design system | `plugin` | `$frontend-design` |
+| `$event-driven-arch` | Event sourcing, CQRS, message queue patterns, and async communication for distributed systems | `plugin` | `$api-design` |
+| `$incremental-impl` | Delivers changes in thin vertical slices, implementing one piece, testing it, verifying it, then expanding | `plugin` | `$task-breakdown` |
+| `$parallel-agents` | Guides parallel agent orchestration with fan-out/fan-in patterns, dependency graphs, result aggregation, and error handling for multi-agent workflows | `plugin` | - |
+| `$prompt-eng` | Guides effective prompt engineering for AI-powered features including system prompts, structured outputs, evaluation, and anti-patterns | `plugin` | - |
+| `$source-driven-dev` | Grounds every implementation decision in official documentation to ensure authoritative, source-cited code | `plugin` | - |
+| `$tdd-practice` | Drives development with tests - write a failing test before writing the code that makes it pass | `plugin` | - |
+| `$ui-engineering` | Builds production-quality user interfaces that are accessible, performant, and visually polished | `plugin` | `$frontend-design` |
+
+## Code Quality & Review
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$simplify` | Review changed code for reuse, quality, and efficiency, then fix any issues found. | `plugin` | - |
+
+## Collaboration Tools
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$doc-coauthoring` | Structured workflow for co-authoring documentation - proposals, technical specs, decision docs, PRDs - through context gathering, refinement, and reader testing | `plugin` | - |
+| `$frontend-design` | Create distinctive, production-grade frontend interfaces with exceptional design quality - web components, pages, dashboards, React components, HTML/CSS layouts | `plugin` | - |
+
+## Configuration
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$keybindings` | Use when the user wants to customize keyboard shortcuts, rebind keys, add chord bindings, or modify ~/.claude/keybindings.json. Examples: | `plugin` | - |
+
+## Context & Memory
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$remember` | Review auto-memory entries and propose promotions to CLAUDE.md, CLAUDE.local.md, AAVA.md, or shared memory. Also detects outdated, conflicting, and duplicate entries across memory layers. | `plugin` | - |
+
+## Debugging
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$investigation-workflow` | Systematic bug investigation using scientific method â€” reproduce, localize, fix, and guard against regression | `plugin` | `$error-recovery`, `$tdd-practice` |
+
+## Debugging & Troubleshooting
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$stuck` | [ANT-ONLY] Investigate frozen/stuck/slow Claude Code sessions on this machine and post a diagnostic report to #claude-code-feedback. | `plugin` | - |
+
+## Define & Ideation
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$idea-refine` | Refines raw ideas into actionable concepts through structured divergent and convergent thinking | `plugin` | - |
+| `$spec-driven-dev` | Creates structured specifications before coding to define what we're building, why, and how we'll know it's done | `plugin` | `$idea-refine` |
+
+## Design Tools
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$theme-factory` | Apply professional themes (colors and fonts) to presentations, documents, and web artifacts - 10 pre-set themes or generate custom themes on-the-fly | `plugin` | - |
+
+## Development
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$my-skill-name` | One-line description shown in the chat dropdown | `plugin` | - |
+
+## Development Tools
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$mcp-builder` | Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools | `plugin` | - |
+| `$skill-creator` | Create new skills, modify existing skills, and measure skill performance - meta tool for building and optimizing the Aava skills library | `plugin` | - |
+
+## Development Workflows
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$debugger` | Investigates bugs using scientific method, manages debug sessions, produces DEBUG.md with structured findings | `plugin` | - |
+| `$plan-executor` | Executes implementation plans with atomic commits, deviation handling, checkpoint protocols, and state management | `plugin` | - |
+
+## Document Tools
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$docx` | Create, read, edit, and manipulate Word documents (.docx files) - professional formatting, tables of contents, images, tracked changes | `plugin` | `$theme-factory` |
+| `$pdf` | Create, read, edit, and manipulate PDF files - extract text/tables, merge/split PDFs, fill forms, add watermarks, encrypt/decrypt | `plugin` | - |
+| `$pptx` | Create, read, edit, and manipulate PowerPoint presentations (.pptx files) - professional slide decks, pitch decks, speaker notes, templates, layouts | `plugin` | `$theme-factory` |
+| `$xlsx` | Create, read, edit, and manipulate Excel spreadsheets (.xlsx, .xlsm, .csv, .tsv) - data analysis, formulas, formatting, charts, financial models | `plugin` | - |
+
+## Information
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$skills` | Generate and view the multi-dimensional registry of all discovered specialist skills. | `builtin` | - |
+
+## Orchestration & Logic
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$batch` | Research and plan a large-scale change, then execute it in parallel across 5â€“30 isolated worktree agents that each open a PR. | `plugin` | - |
+| `$loop` | Run a prompt or slash command on a recurring interval (e.g. /loop 5m /foo, defaults to 10m) | `plugin` | - |
+
+## Personas
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$a11y-architect` | Accessibility specialist ensuring WCAG compliance and inclusive design for all users | `plugin` | - |
+| `$architect` | Senior software architect for system design, scalability, and technical decision-making | `plugin` | - |
+| `$code-explorer` | Master of codebase discovery - traces execution paths, maps architecture, and uncovers hidden dependencies | `plugin` | - |
+| `$data-engineer` | Data pipeline and modeling specialist for ETL, data quality, warehousing, and analytics infrastructure | `plugin` | - |
+| `$devops-engineer` | Infrastructure and deployment specialist for CI/CD, containers, cloud platforms, and production reliability | `plugin` | - |
+| `$frontend-architect` | Frontend architecture specialist for component systems, state management, performance, and design system enforcement | `plugin` | - |
+
+## Planning & Scoping
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$lifecycle-guide` | Discovers and invokes the right development lifecycle skill for the current task across Define, Plan, Build, Verify, Review, and Ship phases | `plugin` | - |
+| `$task-breakdown` | Decomposes work into small, verifiable tasks with explicit acceptance criteria and dependency ordering | `plugin` | `$spec-driven-dev` |
+
+## Quality Assurance
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$code-review-workflow` | Multi-dimensional code review combining security, quality, and dependency analysis in a single structured pass | `plugin` | `$quality-review`, `$security-hardening`, `$dependency-audit` |
+| `$code-reviewer` | Reviews source files for bugs, security issues, and code quality problems. Produces structured REVIEW.md with severity-classified findings. | `plugin` | - |
+
+## Review & Quality
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$code-review-with-verify` | Reviews code then verifies all critical findings are addressed before closing. | `plugin` | `$simplify` |
+| `$code-simplify` | Simplifies code by reducing complexity while preserving exact behavior for better readability and maintainability | `plugin` | `$quality-review` |
+| `$cost-optimization` | Cloud resource right-sizing, cost attribution, and FinOps practices for infrastructure efficiency | `plugin` | - |
+| `$dependency-audit` | Guides dependency management, vulnerability auditing, upgrade planning, and supply chain security for application packages | `plugin` | - |
+| `$observability` | Structured logging, distributed tracing, metrics collection, and alerting for production systems | `plugin` | `$perf-optimize` |
+| `$perf-optimize` | Optimizes application performance with a measure-first approach targeting Core Web Vitals and backend response times | `plugin` | - |
+| `$quality-review` | Conducts multi-axis code review across correctness, readability, architecture, security, and performance dimensions | `plugin` | - |
+| `$refactor` | Guides safe code refactoring that restructures without changing behavior using systematic techniques and continuous test verification | `plugin` | `$quality-review` |
+| `$security-auditor` | Security engineer focused on vulnerability detection, threat modeling, and secure coding practices | `plugin` | - |
+| `$security-hardening` | Hardens code against vulnerabilities with security-first development practices for web applications | `plugin` | - |
+| `$senior-reviewer` | Senior code reviewer that evaluates changes across five dimensions - correctness, readability, architecture, security, and performance | `plugin` | - |
+| `$web-audit` | Runs a unified web application audit covering performance, SEO, accessibility, security headers, and bundle analysis | `plugin` | `$perf-optimize`, `$security-hardening` |
+
+## Ship & Deliver
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$adr-docs` | Records architectural decisions and documentation capturing the why behind technical choices for future engineers and agents | `plugin` | - |
+| `$ci-cd-automation` | Automates CI/CD pipeline setup with quality gates ensuring no change reaches production without passing tests, lint, and build | `plugin` | `$git-workflow` |
+| `$deployment-workflow` | Orchestrated deployment pipeline from pre-deploy checks through staged rollout to post-deploy verification | `plugin` | `$ci-cd-automation`, `$launch-readiness` |
+| `$deprecation-guide` | Manages deprecation and migration when removing old systems, APIs, or features and migrating users safely | `plugin` | - |
+| `$docs-generator` | Generates project documentation including READMEs, API references, changelogs, and onboarding guides from code and git history | `plugin` | `$adr-docs` |
+| `$git-workflow` | Structures git workflow practices with trunk-based development, atomic commits, and disciplined version control | `plugin` | - |
+| `$launch-readiness` | Prepares production launches with pre-launch checklists, monitoring setup, staged rollouts, and rollback strategies | `plugin` | `$ci-cd-automation`, `$git-workflow` |
+| `$migration-guide` | Guides safe code and data migrations with phased cutover plans, codemods, dual-write strategies, and rollback procedures | `plugin` | `$deprecation-guide` |
+
+## Testing & QA
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$webapp-testing` | Browser automation and testing for web applications using Playwright - verify functionality, debug UI, capture screenshots, and test user flows | `plugin` | - |
+
+## Utilities
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$clear` | Expert utility to wipe the current conversation context and start a fresh session. | `builtin` | - |
+| `$help` | Show the interactive command manual and browse all available agentic capabilities. | `builtin` | - |
+
+## Verify & Testing
+| Skill | Description | Source | Composes |
+| :--- | :--- | :--- | :--- |
+| `$devtools-testing` | Tests in real browsers using Chrome DevTools MCP for DOM inspection, console errors, network analysis, and visual verification | `plugin` | - |
+| `$error-recovery` | Guides systematic root-cause debugging when tests fail, builds break, or behavior doesn't match expectations | `plugin` | - |
+| `$test-engineer` | QA engineer specialized in test strategy, test writing, and coverage analysis | `plugin` | - |
+
+
+---
+## Tips
+- Use `$` in the chat to trigger these skills.
+- Each skill provides specialized agentic reasoning for its domain.
+
+
+========== .pytest_cache\README.md ==========
+# pytest cache directory #
+
+This directory contains data from the pytest's cache plugin,
+which provides the `--lf` and `--ff` options, as well as the `cache` fixture.
+
+**Do not** commit this to version control.
+
+See [the docs](https://docs.pytest.org/en/stable/how-to/cache.html) for more information.
+
+
+========== manual-testing\manual_test_cases.md ==========
+
+# Manual Testing - Test Cases
+
+## Application
+Playwright documentation website used for learning.
+
+## Test Cases
+
+| ID | Scenario | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| TC01 | Open homepage | Homepage loads | Record observation | Pending |
+| TC02 | Verify page title | Title contains Playwright | Record observation | Pending |
+| TC03 | Click Get started | Installation page opens | Record observation | Pending |
+| TC04 | Verify Get started link | Link is visible | Record observation | Pending |
+| TC05 | Navigate to an unavailable page | Appropriate not-found behavior | Record observation | Pending |
+
+## Execution Notes
+
+Execute each test in the browser and record the actual
+behavior before updating its status.
+
+## Learning Outcomes
+
+- Writing clear test scenarios
+- Defining expected results
+- Recording actual results
+- Distinguishing pass and fail outcomes
+
+
+========== python-exercises\test_result_summary.py ==========
+
+def summarize_results(results):
+    total = len(results)
+    passed = results.count("PASS")
+    failed = results.count("FAIL")
+
+    return {
+        "total": total,
+        "passed": passed,
+        "failed": failed,
+    }
+
+
+if __name__ == "__main__":
+    sample_results = ["PASS", "PASS", "FAIL", "PASS"]
+    summary = summarize_results(sample_results)
+
+    print(summary)
+
+    assert summary["total"] == 4
+    assert summary["passed"] == 3
+    assert summary["failed"] == 1
+
+
+========== tests\test_qe_basics.py ==========
+
+import re
+
+from playwright.sync_api import Page, expect
+
+
+BASE_URL = "https://playwright.dev/"
+
+
+def test_homepage_loads(page: Page):
+    page.goto(BASE_URL)
+
+    expect(page).to_have_title(re.compile("Playwright"))
+    expect(page.locator("body")).to_be_visible()
+
+
+def test_homepage_heading_is_visible(page: Page):
+    page.goto(BASE_URL)
+
+    expect(
+        page.get_by_role("heading", name=re.compile("Playwright"))
+        .first
+    ).to_be_visible()
+
+
+def test_get_started_link_is_visible(page: Page):
+    page.goto(BASE_URL)
+
+    expect(
+        page.get_by_role("link", name="Get started")
+    ).to_be_visible()
+
+
+def test_get_started_navigation(page: Page):
+    page.goto(BASE_URL)
+
+    page.get_by_role("link", name="Get started").click()
+
+    expect(page).to_have_url(
+        re.compile(r"playwright\.dev/docs/intro/?$")
+    )
+    expect(
+        page.get_by_role("heading", name="Installation")
+    ).to_be_visible()
+
+
+def test_python_documentation_navigation(page: Page):
+    page.goto(BASE_URL)
+
+    page.get_by_role("button", name="Node.js").hover()
+
+    python_link = page.get_by_role(
+        "navigation", name="Main"
+    ).get_by_role("link", name="Python")
+
+    expect(python_link).to_be_visible()
+    python_link.click()
+
+    expect(page).to_have_url(
+        "https://playwright.dev/python/"
+    )
+
+
+========== tests\test_saucedemo_checkout.py ==========
+
+from playwright.sync_api import Page, expect
+
+BASE_URL = "https://www.saucedemo.com/"
+USERNAME = "standard_user"
+PASSWORD = "secret_sauce"
+
+
+def login(page: Page):
+    page.goto(BASE_URL)
+    page.locator("#user-name").fill(USERNAME)
+    page.locator("#password").fill(PASSWORD)
+    page.locator("#login-button").click()
+
+    expect(page).to_have_url(
+        "https://www.saucedemo.com/inventory.html"
+    )
+
+
+def test_product_list_visible(page: Page):
+    login(page)
+
+    expect(
+        page.get_by_text("Sauce Labs Backpack", exact=True)
+    ).to_be_visible()
+
+
+def test_add_product_to_cart(page: Page):
+    login(page)
+
+    page.get_by_role(
+        "button", name="Add to cart"
+    ).first.click()
+
+    expect(
+        page.locator(".shopping_cart_badge")
+    ).to_have_text("1")
+
+
+def test_remove_product_from_cart(page: Page):
+    login(page)
+
+    page.get_by_role("button", name="Add to cart").first.click()
+
+    # Click the shopping cart link using its CSS class
+    page.locator(".shopping_cart_link").click()
+
+    expect(
+        page.get_by_text("Sauce Labs Backpack", exact=True)
+    ).to_be_visible()
+
+    page.get_by_role("button", name="Remove").click()
+
+    expect(
+        page.get_by_text("Sauce Labs Backpack", exact=True)
+    ).to_have_count(0)
+
+def test_checkout_form(page: Page):
+    login(page)
+
+    page.get_by_role(
+        "button", name="Add to cart"
+    ).first.click()
+
+    # Click the shopping cart link using its CSS class
+    page.locator(".shopping_cart_link").click()
+
+    page.get_by_role("button", name="Checkout").click()
+
+    expect(page).to_have_url(
+        "https://www.saucedemo.com/checkout-step-one.html"
+    )
+
+    page.locator("#first-name").fill("Test")
+    page.locator("#last-name").fill("User")
+    page.locator("#postal-code").fill("560001")
+
+    page.get_by_role("button", name="Continue").click()
+
+    expect(page).to_have_url(
+        "https://www.saucedemo.com/checkout-step-two.html"
+    )
+    expect(
+        page.get_by_role("button", name="Finish")
+    ).to_be_visible()
+
+
+def test_complete_checkout(page: Page):
+    login(page)
+
+    page.get_by_role(
+        "button", name="Add to cart"
+    ).first.click()
+
+    # Click the shopping cart link using its CSS class
+    page.locator(".shopping_cart_link").click()
+
+
+    page.get_by_role("button", name="Checkout").click()
+
+    page.locator("#first-name").fill("Test")
+    page.locator("#last-name").fill("User")
+    page.locator("#postal-code").fill("560001")
+
+    page.get_by_role("button", name="Continue").click()
+    page.get_by_role("button", name="Finish").click()
+
+    expect(
+        page.get_by_text("Thank you for your order!")
+    ).to_be_visible()
+
+
+========== tests\test_saucedemo_inventory_validation.py ==========
+
+from playwright.sync_api import Page, expect
+
+BASE_URL = "https://www.saucedemo.com/"
+USERNAME = "standard_user"
+PASSWORD = "secret_sauce"
+
+
+def login(page: Page):
+    page.goto(BASE_URL)
+    page.locator("#user-name").fill(USERNAME)
+    page.locator("#password").fill(PASSWORD)
+    page.locator("#login-button").click()
+
+    expect(page).to_have_url(
+        "https://www.saucedemo.com/inventory.html"
+    )
+
+
+def test_inventory_has_six_products(page: Page):
+    login(page)
+
+    expect(
+        page.locator(".inventory_item")
+    ).to_have_count(6)
+
+
+def test_product_prices_are_visible(page: Page):
+    login(page)
+
+    prices = page.locator(".inventory_item_price")
+    expect(prices).to_have_count(6)
+
+    for index in range(prices.count()):
+        expect(prices.nth(index)).to_be_visible()
+
+
+def test_sort_products_by_price_low_to_high(page: Page):
+    login(page)
+
+    page.locator(".product_sort_container").select_option("lohi")
+
+    prices = page.locator(".inventory_item_price").all_text_contents()
+    numeric_prices = [
+        float(price.replace("$", "")) for price in prices
+    ]
+
+    assert numeric_prices == sorted(numeric_prices)
+
+
+def test_sort_products_by_price_high_to_low(page: Page):
+    login(page)
+
+    page.locator(".product_sort_container").select_option("hilo")
+
+    prices = page.locator(".inventory_item_price").all_text_contents()
+    numeric_prices = [
+        float(price.replace("$", "")) for price in prices
+    ]
+
+    assert numeric_prices == sorted(numeric_prices, reverse=True)
+
+
+def test_inventory_product_images_are_visible(page: Page):
+    login(page)
+
+    images = page.locator(".inventory_item_img img")
+    expect(images).to_have_count(6)
+
+    for index in range(images.count()):
+        expect(images.nth(index)).to_be_visible()
+
+
+========== tests\test_saucedemo_login.py ==========
+
+from playwright.sync_api import Page, expect
+
+BASE_URL = "https://www.saucedemo.com/"
+PASSWORD = "secret_sauce"
+
+
+def test_login_page_elements_visible(page: Page):
+    page.goto(BASE_URL)
+
+    expect(page.locator("#user-name")).to_be_visible()
+    expect(page.locator("#password")).to_be_visible()
+    expect(page.locator("#login-button")).to_be_visible()
+
+
+def test_valid_login(page: Page):
+    page.goto(BASE_URL)
+
+    page.locator("#user-name").fill("standard_user")
+    page.locator("#password").fill(PASSWORD)
+    page.locator("#login-button").click()
+
+    expect(page).to_have_url(
+        "https://www.saucedemo.com/inventory.html"
+    )
+    expect(
+        page.get_by_text("Products", exact=True)
+    ).to_be_visible()
+
+
+def test_invalid_password(page: Page):
+    page.goto(BASE_URL)
+
+    page.locator("#user-name").fill("standard_user")
+    page.locator("#password").fill("wrong_password")
+    page.locator("#login-button").click()
+
+    expect(page.locator("[data-test='error']")).to_contain_text(
+        "Username and password do not match"
+    )
+
+
+def test_empty_username(page: Page):
+    page.goto(BASE_URL)
+
+    page.locator("#password").fill(PASSWORD)
+    page.locator("#login-button").click()
+
+    expect(page.locator("[data-test='error']")).to_contain_text(
+        "Username is required"
+    )
+
+
+def test_locked_out_user(page: Page):
+    page.goto(BASE_URL)
+
+    page.locator("#user-name").fill("locked_out_user")
+    page.locator("#password").fill(PASSWORD)
+    page.locator("#login-button").click()
+
+    expect(page.locator("[data-test='error']")).to_contain_text(
+        "Sorry, this user has been locked out"
+    )
+
