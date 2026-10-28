@@ -1,0 +1,23 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+
+# Test output
+test-results/
+playwright-report/
+blob-report/
+*.log
+
+# Local editor settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
