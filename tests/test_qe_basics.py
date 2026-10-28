@@ -21,3 +21,18 @@ def test_get_started_link_is_visible(page: Page):
     expect(
         page.get_by_role("link", name="Get started")
     ).to_be_visible()
+
+
+
+def test_python_documentation_link(page: Page):
+    page.goto("https://playwright.dev/")
+    expect(
+        page.get_by_role("link", name="Python")
+    ).to_be_visible()
+
+
+def test_get_started_link_is_visible(page: Page):
+    page.goto("https://playwright.dev/")
+    expect(
+        page.get_by_role("link", name="Get started")
+    ).to_be_visible()
